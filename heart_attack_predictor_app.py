@@ -5,16 +5,28 @@ import pandas as pd
 import os
 import joblib
 
-# Get the absolute path of this script
+# Get absolute base path
 base_path = os.path.dirname(os.path.abspath(__file__))
 
-# Point to the correct model and preprocessor file paths
+# Paths to model and preprocessor
 model_path = os.path.join(base_path, "heart_attack_model.pkl")
 preprocessor_path = os.path.join(base_path, "heart_attack_preprocessor.pkl")
 
-# Load model and preprocessor
-model = joblib.load(model_path)
-preprocessor = joblib.load(preprocessor_path)
+# Debug: print the paths
+import streamlit as st
+st.write("Model Path:", model_path)
+st.write("Preprocessor Path:", preprocessor_path)
+
+# Check if files exist
+if not os.path.exists(model_path):
+    st.error(f"Model file not found at {model_path}")
+else:
+    model = joblib.load(model_path)
+
+if not os.path.exists(preprocessor_path):
+    st.error(f"Preprocessor file not found at {preprocessor_path}")
+else:
+    preprocessor = joblib.load(preprocessor_path)
 
 # 🧠 Define UI
 st.set_page_config(page_title="Heart Attack Risk Predictor", layout="centered")
