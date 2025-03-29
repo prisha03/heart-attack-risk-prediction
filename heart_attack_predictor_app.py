@@ -2,10 +2,15 @@ import streamlit as st
 import numpy as np
 import joblib
 import pandas as pd
+import os
+import joblib
 
-# 💾 Load model and preprocessor
-model = joblib.load("heart_attack_model.pkl")
-preprocessor = joblib.load("heart_attack_preprocessor.pkl")
+# Get the current directory of the script
+base_path = os.path.dirname(__file__)
+
+# Load the model and preprocessor
+model = joblib.load(os.path.join(base_path, 'heart_attack_model.pkl'))
+preprocessor = joblib.load(os.path.join(base_path, 'heart_attack_preprocessor.pkl'))
 
 # 🧠 Define UI
 st.set_page_config(page_title="Heart Attack Risk Predictor", layout="centered")
