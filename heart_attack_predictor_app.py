@@ -5,24 +5,27 @@ import pandas as pd
 import os
 import joblib
 
-# Get absolute base path
-base_path = os.path.dirname(os.path.abspath(__file__))
+import streamlit as st
+import numpy as np
+import pandas as pd
+import joblib
+import os
 
-# Paths to model and preprocessor
-model_path = os.path.join(base_path, "heart_attack_model.pkl")
-preprocessor_path = os.path.join(base_path, "heart_attack_preprocessor.pkl")
+# Direct file paths (compatible with Streamlit Cloud)
+model_path = "heart_attack_model.pkl"
+preprocessor_path = "heart_attack_preprocessor.pkl"
 
 # Debug: print the paths
-import streamlit as st
 st.write("Model Path:", model_path)
 st.write("Preprocessor Path:", preprocessor_path)
 
-# Check if files exist
+# Load model
 if not os.path.exists(model_path):
     st.error(f"Model file not found at {model_path}")
 else:
     model = joblib.load(model_path)
 
+# Load preprocessor
 if not os.path.exists(preprocessor_path):
     st.error(f"Preprocessor file not found at {preprocessor_path}")
 else:
