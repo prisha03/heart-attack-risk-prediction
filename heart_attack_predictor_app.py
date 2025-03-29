@@ -5,14 +5,14 @@ import pandas as pd
 import os
 import joblib
 
-# Get the absolute path of the current file
+# Get the absolute path of this script
 base_path = os.path.dirname(os.path.abspath(__file__))
 
-# Construct full paths to the model and preprocessor
+# Point to the correct model and preprocessor file paths
 model_path = os.path.join(base_path, "heart_attack_model.pkl")
 preprocessor_path = os.path.join(base_path, "heart_attack_preprocessor.pkl")
 
-# Load the model and preprocessor
+# Load model and preprocessor
 model = joblib.load(model_path)
 preprocessor = joblib.load(preprocessor_path)
 
