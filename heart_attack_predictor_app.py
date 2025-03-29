@@ -5,12 +5,16 @@ import pandas as pd
 import os
 import joblib
 
-# Get the current directory of the script
-base_path = os.path.dirname(__file__)
+# Get the absolute path of the current file
+base_path = os.path.dirname(os.path.abspath(__file__))
+
+# Construct full paths to the model and preprocessor
+model_path = os.path.join(base_path, "heart_attack_model.pkl")
+preprocessor_path = os.path.join(base_path, "heart_attack_preprocessor.pkl")
 
 # Load the model and preprocessor
-model = joblib.load(os.path.join(base_path, 'heart_attack_model.pkl'))
-preprocessor = joblib.load(os.path.join(base_path, 'heart_attack_preprocessor.pkl'))
+model = joblib.load(model_path)
+preprocessor = joblib.load(preprocessor_path)
 
 # 🧠 Define UI
 st.set_page_config(page_title="Heart Attack Risk Predictor", layout="centered")
