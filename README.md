@@ -1,3 +1,5 @@
+![Heart Attack Risk Prediction](heart-attack-risk-prediction.jpg)
+
 # Heart Attack Risk Predictor
 Heart Attack Risk Predictor is an end-to-end machine learning (ML) application that uses clinical, lifestyle, and demographic data to classify whether an individual is at high risk of a heart attack. The project was developed to demonstrate skills across the entire data science lifecycle — including data preprocessing, feature engineering, model training, evaluation, and deployment.
 The solution is built using Python and integrates a modular pipeline using Scikit-learn, XGBoost, LightGBM, and Logistic Regression. A custom preprocessing pipeline handles missing values, encodes categorical features, and scales numeric attributes using ColumnTransformer and SimpleImputer. The data suffers from class imbalance, which is addressed using SMOTE (Synthetic Minority Oversampling Technique) from the imbalanced-learn library.
