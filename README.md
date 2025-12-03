@@ -28,10 +28,4 @@ Inputs:
 - Physical Activity: 2 days/week
 - Systolic BP: 135
 
-Prediction: **High Risk**
-
-# About Me
-I'm Prisha Chawla, a Master’s in Business Analytics student at UC Irvine with a background in data analytics and machine learning. I enjoy building real-world solutions and making models accessible to users through thoughtful design and interactivity.
-
-📧 Email: prishachawla10@gmail.com  
-🔗 LinkedIn: https://linkedin.com/in/prisha-chawla  
+Prediction: **High Risk** 
